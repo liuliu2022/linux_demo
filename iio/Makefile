@@ -1,21 +1,5 @@
-obj-m += test_iio.o
+MODULE := test_iio
 
-KDIR ?= /lib/modules/$(shell uname -r)/build
-ARCH ?=
-CROSS_COMPILE ?=
+obj-m += $(MODULE).o
 
-PWD := $(shell pwd)
-
-all:
-	$(MAKE) -C $(KDIR) \
-		M=$(PWD) \
-		ARCH=$(ARCH) \
-		CROSS_COMPILE=$(CROSS_COMPILE) \
-		modules
-
-clean:
-	$(MAKE) -C $(KDIR) \
-		M=$(PWD) \
-		ARCH=$(ARCH) \
-		CROSS_COMPILE=$(CROSS_COMPILE) \
-		clean
+include ../kernel_module.mk
