@@ -1,0 +1,15 @@
+# Linux kernel module build outputs
+*.o
+*.ko
+*.mod
+*.mod.c
+*.symvers
+Module.symvers
+modules.order
+.*.cmd
+.tmp_versions/
+
+# Editor / temporary files
+*~
+*.swp
+*.tmp
